@@ -4,26 +4,30 @@ start: (statement | funclist)?;
 
 funclist: funcdef (funcdef | funclist);
 
-funcdef: DEF IDENT OPEN_PAREN paramlist CLOSE_PAREN OPEN_BRACE statelist CLOSE_BRACE;
+funcdef: DEF IDENT '(' paramlist ')' '{' statelist '}';
 
-paramlist: (types IDENT COMMA paramlist | types IDENT)?;
+paramlist: (types IDENT ',' paramlist | types IDENT)?;
 
-statement: (
-    ((vardecl | atribstat | printstat | readstat | returnstat) SEMI_COLON) |
+statement:
+    vardecl ';' | 
+    atribstat ';' | 
+    printstat ';' | 
+    readstat ';' | 
+    returnstat ';' |
     ifstat |
     forstat |
-    OPEN_BRACE statelist CLOSE_BRACE |
-    BREAK SEMI_COLON |
-    SEMI_COLON
-);
+    '{' statelist '}' |
+    BREAK ';' |
+    ';'
+;
 
-vardecl: types IDENT (OPEN_BRACK INT CLOSE_BRACK)*;
+vardecl: types IDENT '['INT_CONSTANT']' | types IDENT;
 
-atribstat : lvalue ASSIGN (expression | allocexpression | funccall);
+atribstat : lvalue '=' (expression | allocexpression | funccall);
 
-funccall: IDENT OPEN_PAREN paramlistcall CLOSE_PAREN;
+funccall: IDENT '(' paramlistcall ')';
 
-paramlistcall: (IDENT COMMA paramlistcall | IDENT)?;
+paramlistcall: (IDENT ',' paramlistcall | IDENT)?;
 
 printstat: PRINT expression;
 
@@ -31,25 +35,25 @@ readstat: READ lvalue;
 
 returnstat: RETURN;
 
-ifstat: IF OPEN_PAREN expression CLOSE_PAREN statement (ELSE statement)?;
+ifstat: IF '(' expression ')' statement (ELSE statement)?;
 
-forstat: FOR OPEN_PAREN atribstat SEMI_COLON expression SEMI_COLON atribstat CLOSE_PAREN statement;
+forstat: FOR '(' atribstat ';' expression ';' atribstat ')' statement;
 
 statelist: statement (statelist)?;
 
-allocexpression: NEW types (OPEN_BRACK numexpression CLOSE_BRACK)+;
+allocexpression: NEW types ('[' numexpression ']')+;
 
-expression: numexpression ((LESS_THAN | GREATHER_THAN | LESS_THAN_OR_EQUAL | GREATHER_THAN_OR_EQUAL | EQUALS | DIFFERENT) numexpression)?;
+expression: numexpression (('<' | '>' | '<=' | '>=' | '==' | '!=') numexpression)?;
 
-numexpression: term ((PLUS | MINUS) term)*; 
+numexpression: term (('+' | '-') term)*; 
 
-term: unaryexpr ((MULTIPLY | DIVIDE | MOD) unaryexpr)*;
+term: unaryexpr (('*' | '/' | '%') unaryexpr)*;
 
-unaryexpr: ((PLUS | MINUS))? factor;
+unaryexpr: (('+' | '-'))? factor;
 
-factor: (INT_CONSTANT | FLOAT_CONSTANT | STRING_CONSTANT | NULL | lvalue | OPEN_PAREN numexpression CLOSE_PAREN);
+factor: (INT_CONSTANT | FLOAT_CONSTANT | STRING_CONSTANT | NULL | lvalue | '(' numexpression ')');
 
-lvalue: IDENT(OPEN_BRACK INT CLOSE_BRACK)*;
+lvalue: IDENT '['INT_CONSTANT']' | IDENT;
 
 types: INT | FLOAT | STRING;
 
@@ -80,7 +84,7 @@ MINUS: '-';
 MULTIPLY: '*';
 DIVIDE: '/';
 MOD: '%';
-NULL: 'NULL';
+NULL: 'null';
 LESS_THAN: '<';
 GREATHER_THAN: '>';
 LESS_THAN_OR_EQUAL: '<=';
