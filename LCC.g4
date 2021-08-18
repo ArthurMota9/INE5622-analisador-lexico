@@ -1,61 +1,57 @@
 grammar LCC;
 
-start : (statement | funclist)?;
+start: (statement | funclist)?;
 
-funclist : funcdef (funcdef | funclist);
+funclist: funcdef (funcdef | funclist);
 
-funcdef : DEF IDENT openParantheses paramlist closeParantheses openBraces statelist closeBraces;
+funcdef: DEF IDENT OPEN_PAREN paramlist CLOSE_PAREN OPEN_BRACE statelist CLOSE_BRACE;
 
-paramlist : (types IDENT comma paramlist | types IDENT)?;
+paramlist: (types IDENT COMMA paramlist | types IDENT)?;
 
-statement : (
-    vardecl semicolon |
-    atribstat semicolon |
-    printstat semicolon |
-    readstat semicolon |
-    returnstat semicolon |
+statement: (
+    ((vardecl | atribstat | printstat | readstat | returnstat) SEMI_COLON) |
     ifstat |
     forstat |
-    openBraces statelist closeBraces |
-    BREAK semicolon |
-    semicolon
+    OPEN_BRACE statelist CLOSE_BRACE |
+    BREAK SEMI_COLON |
+    SEMI_COLON
 );
 
-vardecl : types IDENT(openBrackets INT_CONSTANT closeBrackets)*?;
+vardecl: types IDENT (OPEN_BRACK INT CLOSE_BRACK)*;
 
-atribstat : lvalue assignment (expression | allocexpression | funccall);
+atribstat : lvalue ASSIGN (expression | allocexpression | funccall);
 
-funccall : IDENT openParantheses paramlistcall closeParantheses;
+funccall: IDENT OPEN_PAREN paramlistcall CLOSE_PAREN;
 
-paramlistcall : (IDENT comma paramlistcall | IDENT)?;
+paramlistcall: (IDENT COMMA paramlistcall | IDENT)?;
 
-printstat : PRINT expression;
+printstat: PRINT expression;
 
-readstat : READ lvalue;
+readstat: READ lvalue;
 
-returnstat : RETURN;
+returnstat: RETURN;
 
-ifstat : IF openParantheses expression closeParantheses statement (ELSE statement)?;
+ifstat: IF OPEN_PAREN expression CLOSE_PAREN statement (ELSE statement)?;
 
-forstat : FOR openParantheses atribstat semicolon expression semicolon atribstat closeParantheses statement;
+forstat: FOR OPEN_PAREN atribstat SEMI_COLON expression SEMI_COLON atribstat CLOSE_PAREN statement;
 
-statelist : statement (statelist)?;
+statelist: statement (statelist)?;
 
-allocexpression : NEW types (openBrackets numexpression closeBrackets)+;
+allocexpression: NEW types (OPEN_BRACK numexpression CLOSE_BRACK)+;
 
-expression : numexpression ((lessThan | greatherThan | lessThanOrEqual | greatherThanOrEqual | equal | different) numexpression)?;
+expression: numexpression ((LESS_THAN | GREATHER_THAN | LESS_THAN_OR_EQUAL | GREATHER_THAN_OR_EQUAL | EQUALS | DIFFERENT) numexpression)?;
 
-numexpression : term ((plus | minus) term)*? ; 
+numexpression: term ((PLUS | MINUS) term)*; 
 
-term : unaryexpr ((multiply | divide | percent) unaryexpr)*?;
+term: unaryexpr ((MULTIPLY | DIVIDE | MOD) unaryexpr)*;
 
-unaryexpr : ((plus | minus))? factor;
+unaryexpr: ((PLUS | MINUS))? factor;
 
-factor : (INT_CONSTANT | FLOAT_CONSTANT | STRING_CONSTANT | NULL | lvalue | openParantheses numexpression closeParantheses);
+factor: (INT_CONSTANT | FLOAT_CONSTANT | STRING_CONSTANT | NULL | lvalue | OPEN_PAREN numexpression CLOSE_PAREN);
 
-lvalue : IDENT(openBrackets numexpression closeBrackets)*?;
+lvalue: IDENT(OPEN_BRACK INT CLOSE_BRACK)*;
 
-types : INT | FLOAT | STRING;
+types: INT | FLOAT | STRING;
 
 // Tokens
 DEF: 'def';
@@ -70,31 +66,31 @@ IF: 'if';
 ELSE: 'else';
 FOR: 'for';
 NEW: 'new';
-openParantheses: '(';
-closeParantheses: ')';
-openBraces: '{';
-closeBraces: '}';
-openBrackets: '[';
-closeBrackets: ']';
-comma: ',';
-semicolon: ';';
-assignment: '=';
-plus: '+';
-minus: '-';
-multiply: '*';
-divide: '/';
-percent: '%';
-NULL: 'null';
-lessThan: '<';
-greatherThan: '>';
-lessThanOrEqual: '<=';
-greatherThanOrEqual: '>=';
-equal: '==';
-different: '!=';
+OPEN_PAREN : '(';
+CLOSE_PAREN : ')';
+OPEN_BRACE : '{';
+CLOSE_BRACE : '}';
+OPEN_BRACK : '[';
+CLOSE_BRACK : ']';
+COMMA: ',';
+SEMI_COLON : ';';
+ASSIGN : '=';
+PLUS: '+';
+MINUS: '-';
+MULTIPLY: '*';
+DIVIDE: '/';
+MOD: '%';
+NULL: 'NULL';
+LESS_THAN: '<';
+GREATHER_THAN: '>';
+LESS_THAN_OR_EQUAL: '<=';
+GREATHER_THAN_OR_EQUAL: '>=';
+EQUALS: '==';
+DIFFERENT: '!=';
 
 // Regex
 IDENT : [a-zA-Z][a-zA-Z0-9]*;
-INT_CONSTANT : '-'?[0-9]+;
+INT_CONSTANT : [0-9]+;
 FLOAT_CONSTANT: '-'?[0-9]*.?[0-9]+;
 STRING_CONSTANT : [a-zA-Z][a-zA-Z0-9]*;
 WS : [ \r\n\t]+ -> skip;
