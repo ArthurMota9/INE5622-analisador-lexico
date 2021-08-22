@@ -17,7 +17,9 @@ def main():
     stream = CommonTokenStream(lexer)
     parser = LCCParser(stream)
 
-    tree = parser.start()
+    parser.start()
+
+    print([LCCLexer.ruleNames[token.type - 1] for token in parser.getTokenStream().tokens])
 
 if __name__ == '__main__':
     main()

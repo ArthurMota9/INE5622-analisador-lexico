@@ -1,6 +1,6 @@
 grammar LCC;
 
-start: (statement | funclist)?;
+start: (statement | funclist)? EOF;
 
 funclist: funcdef (funcdef | funclist);
 
