@@ -22,11 +22,12 @@ def main():
 
     parser.start()
 
-    print([LCCLexer.ruleNames[token.type - 1] for token in parser.getTokenStream().tokens])
+    if parser._syntaxErrors == 0:
+        print([LCCLexer.ruleNames[token.type - 1] for token in parser.getTokenStream().tokens])
 
-    for token in parser.getTokenStream().tokens:
-        if token.type == 34:
-            printIdentDetails(token)
+        for token in parser.getTokenStream().tokens:
+            if token.type == 34:
+                printIdentDetails(token)
 
 if __name__ == '__main__':
     main()

@@ -36,6 +36,7 @@ INT_CONSTANT=35
 FLOAT_CONSTANT=36
 STRING_CONSTANT=37
 WS=38
+END_OF_FILE=39
 'def'=1
 'int'=2
 'float'=3
@@ -69,3 +70,4 @@ WS=38
 '>='=31
 '=='=32
 '!='=33
+'<EOF>'=39

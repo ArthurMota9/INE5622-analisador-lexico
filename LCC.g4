@@ -21,7 +21,7 @@ statement:
     ';'
 ;
 
-vardecl: types IDENT '['INT_CONSTANT']' | types IDENT;
+vardecl: types IDENT '[' INT_CONSTANT ']' | types IDENT;
 
 atribstat : lvalue '=' (expression | allocexpression | funccall);
 
@@ -98,3 +98,5 @@ INT_CONSTANT : [0-9]+;
 FLOAT_CONSTANT: [0-9]*.?[0-9]+;
 STRING_CONSTANT : [a-zA-Z][a-zA-Z0-9]*;
 WS : [ \r\n\t]+ -> skip;
+
+END_OF_FILE: '<EOF>';
