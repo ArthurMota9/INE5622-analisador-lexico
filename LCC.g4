@@ -95,6 +95,6 @@ DIFFERENT: '!=';
 // Regex
 IDENT : [a-zA-Z][a-zA-Z0-9]*;
 INT_CONSTANT : [0-9]+;
-FLOAT_CONSTANT: '-'?[0-9]*.?[0-9]+;
+FLOAT_CONSTANT: [0-9]*.?[0-9]+;
 STRING_CONSTANT : [a-zA-Z][a-zA-Z0-9]*;
 WS : [ \r\n\t]+ -> skip;

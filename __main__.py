@@ -5,6 +5,9 @@ from antlr4 import FileStream, CommonTokenStream
 from LCCLexer import LCCLexer
 from LCCParser import LCCParser
 
+def printIdentDetails(token):
+    print("IDENT '{}' na linha {} coluna {}".format(token.text, token.line, token.column))
+
 def main():
     # Argument parser
     parser_args = argparse.ArgumentParser(prog='LCC', description='LCC interpreter')
@@ -20,6 +23,10 @@ def main():
     parser.start()
 
     print([LCCLexer.ruleNames[token.type - 1] for token in parser.getTokenStream().tokens])
+
+    for token in parser.getTokenStream().tokens:
+        if token.type == 34:
+            printIdentDetails(token)
 
 if __name__ == '__main__':
     main()
