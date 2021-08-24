@@ -1,5 +1,11 @@
 # INE5622-analisador-lexico
 
+To run in a python virtual environment
+`make run`  
+
+To clean the python virtual environment
+`make clean`  
+
 To install antlr4 lib in UNIX-like systems you should do:  
 `sudo apt install -y antlr4`  
 then:  
