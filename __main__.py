@@ -28,7 +28,7 @@ def main():
             if token.type == 34:
                 if token.text not in token_text_list:
                     token_text_list.append(token.text)
-                    print("IDENT '{}' na linha {} coluna {}".format(token.text, token.line, token.column))
+                    print("IDENT '{}' ocorreu pela primeira vez na linha {} coluna {}".format(token.text, token.line, token.column))
 
 
 if __name__ == '__main__':
