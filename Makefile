@@ -12,3 +12,6 @@ venv/bin/activate: requirements.txt
 
 run: venv/bin/activate
 	./venv/bin/python3 __main__.py ./code-examples/example2.lcc
+
+run-error: venv/bin/activate
+	./venv/bin/python3 __main__.py ./code-examples/example2.lcc
