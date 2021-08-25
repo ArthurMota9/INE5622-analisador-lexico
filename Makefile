@@ -11,4 +11,4 @@ venv/bin/activate: requirements.txt
 	./venv/bin/pip install -r requirements.txt
 
 run: venv/bin/activate
-	./venv/bin/python3 __main__.py ./code-examples/example2.lcc
+	./venv/bin/python3 __main__.py ./code-examples/codeWithoutError.lcc

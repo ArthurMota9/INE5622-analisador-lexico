@@ -1,0 +1,7 @@
+def func1+(int A, int B)
+{
+  int SM;
+  SM = A + B;
+  SM = B * C;
+  return;
+}
