@@ -10,7 +10,7 @@ def main():
     parser_args.add_argument('input', type=str, help='source code')
     args = parser_args.parse_args()
 
-    input_stream = FileStream(args.input)
+    input_stream = FileStream(args.input, encoding='utf8')
 
     lexer = LCCLexer(input_stream)
     stream = CommonTokenStream(lexer)
