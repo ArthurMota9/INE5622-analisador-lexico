@@ -1,6 +1,6 @@
 .PHONY: run clean
 setup:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 clean:
 	rm -rf __pycache__
@@ -8,7 +8,8 @@ clean:
 
 venv/bin/activate: requirements.txt
 	python3 -m venv venv
-	./venv/bin/pip install -r requirements.txt
+	./venv/bin/pip3 install wheel
+	./venv/bin/pip3 install -r requirements.txt
 
 run: venv/bin/activate
 	./venv/bin/python3 __main__.py ./code-examples/codeWithoutError.lcc
