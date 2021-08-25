@@ -11,8 +11,11 @@ venv/bin/activate: requirements.txt
 	./venv/bin/pip3 install wheel
 	./venv/bin/pip3 install -r requirements.txt
 
-run: venv/bin/activate
+run-st: venv/bin/activate
 	./venv/bin/python3 __main__.py ./code-examples/codeWithoutError.lcc
 
-run-error: venv/bin/activate
+run-nd: venv/bin/activate
+	./venv/bin/python3 __main__.py ./code-examples/codeWithoutError2.lcc
+
+run-err: venv/bin/activate
 	./venv/bin/python3 __main__.py ./code-examples/codeWithError.lcc
