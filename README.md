@@ -1,12 +1,15 @@
 # INE5622-analisador-lexico
 
-On Debian/Ubuntu systems, you need to install the python3-venv
-package using the following command.
+Em sistemas Debian/Ubuntu, você precisa instalar o pacote `python3-venv`
+usando o seguinte comando:
 
 `sudo apt install python3.8-venv`
 
-To run in a python virtual environment
+Para rodar em um ambiente virtual python o código sem erro:
 `make run`  
 
-To clean the python virtual environment
+Para rodar em um ambiente virtual python o código com erro:
+`make run-error`  
+
+Para limpar o ambiente virtual python:
 `make clean`  
