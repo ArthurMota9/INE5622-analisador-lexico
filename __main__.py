@@ -1,8 +1,8 @@
 import argparse
 from antlr4 import FileStream, CommonTokenStream
 
-from LCCLexer import LCCLexer
-from LCCParser import LCCParser
+from build.LCCLexer import LCCLexer
+from build.LCCParser import LCCParser
 
 
 def main():
