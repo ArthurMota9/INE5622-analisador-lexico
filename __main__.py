@@ -21,8 +21,9 @@ def main():
     token_text_list = []
 
     if parser._syntaxErrors == 0:
+        print('Lista de tokens na ordem que eles ocorrem:' + '\n')
         print([LCCLexer.ruleNames[token.type - 1] for token in parser.getTokenStream().tokens])
-
+        print('\n' + 'Tabela de símbolos:' + '\n')
         for token in parser.getTokenStream().tokens:
             if token.type == 34:
                 if token.text not in token_text_list:
