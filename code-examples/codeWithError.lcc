@@ -5,3 +5,5 @@ def func1+(int A, int B)
   SM = B * C;
   return;
 }
+
+def {}
