@@ -126,8 +126,8 @@ class LCCParser ( Parser ):
                       "OPEN_PAREN", "CLOSE_PAREN", "OPEN_BRACE", "CLOSE_BRACE", 
                       "OPEN_BRACK", "CLOSE_BRACK", "COMMA", "SEMI_COLON", 
                       "ASSIGN", "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "MOD", 
-                      "NULL", "LESS_THAN", "GREATHER_THAN", "LESS_THAN_OR_EQUAL", 
-                      "GREATHER_THAN_OR_EQUAL", "EQUALS", "DIFFERENT", "IDENT", 
+                      "NULL", "LESS_THAN", "GREATER_THAN", "LESS_THAN_OR_EQUAL", 
+                      "GREATER_THAN_OR_EQUAL", "EQUALS", "DIFFERENT", "IDENT", 
                       "INT_CONSTANT", "FLOAT_CONSTANT", "STRING_CONSTANT", 
                       "WS", "END_OF_FILE" ]
 
@@ -190,9 +190,9 @@ class LCCParser ( Parser ):
     MOD=26
     NULL=27
     LESS_THAN=28
-    GREATHER_THAN=29
+    GREATER_THAN=29
     LESS_THAN_OR_EQUAL=30
-    GREATHER_THAN_OR_EQUAL=31
+    GREATER_THAN_OR_EQUAL=31
     EQUALS=32
     DIFFERENT=33
     IDENT=34
@@ -1347,14 +1347,14 @@ class LCCParser ( Parser ):
         def LESS_THAN(self):
             return self.getToken(LCCParser.LESS_THAN, 0)
 
-        def GREATHER_THAN(self):
-            return self.getToken(LCCParser.GREATHER_THAN, 0)
+        def GREATER_THAN(self):
+            return self.getToken(LCCParser.GREATER_THAN, 0)
 
         def LESS_THAN_OR_EQUAL(self):
             return self.getToken(LCCParser.LESS_THAN_OR_EQUAL, 0)
 
-        def GREATHER_THAN_OR_EQUAL(self):
-            return self.getToken(LCCParser.GREATHER_THAN_OR_EQUAL, 0)
+        def GREATER_THAN_OR_EQUAL(self):
+            return self.getToken(LCCParser.GREATER_THAN_OR_EQUAL, 0)
 
         def EQUALS(self):
             return self.getToken(LCCParser.EQUALS, 0)
@@ -1388,10 +1388,10 @@ class LCCParser ( Parser ):
             self.state = 175
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LCCParser.LESS_THAN) | (1 << LCCParser.GREATHER_THAN) | (1 << LCCParser.LESS_THAN_OR_EQUAL) | (1 << LCCParser.GREATHER_THAN_OR_EQUAL) | (1 << LCCParser.EQUALS) | (1 << LCCParser.DIFFERENT))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LCCParser.LESS_THAN) | (1 << LCCParser.GREATER_THAN) | (1 << LCCParser.LESS_THAN_OR_EQUAL) | (1 << LCCParser.GREATER_THAN_OR_EQUAL) | (1 << LCCParser.EQUALS) | (1 << LCCParser.DIFFERENT))) != 0):
                 self.state = 173
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LCCParser.LESS_THAN) | (1 << LCCParser.GREATHER_THAN) | (1 << LCCParser.LESS_THAN_OR_EQUAL) | (1 << LCCParser.GREATHER_THAN_OR_EQUAL) | (1 << LCCParser.EQUALS) | (1 << LCCParser.DIFFERENT))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LCCParser.LESS_THAN) | (1 << LCCParser.GREATER_THAN) | (1 << LCCParser.LESS_THAN_OR_EQUAL) | (1 << LCCParser.GREATER_THAN_OR_EQUAL) | (1 << LCCParser.EQUALS) | (1 << LCCParser.DIFFERENT))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)

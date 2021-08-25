@@ -86,9 +86,9 @@ DIVIDE: '/';
 MOD: '%';
 NULL: 'null';
 LESS_THAN: '<';
-GREATHER_THAN: '>';
+GREATER_THAN: '>';
 LESS_THAN_OR_EQUAL: '<=';
-GREATHER_THAN_OR_EQUAL: '>=';
+GREATER_THAN_OR_EQUAL: '>=';
 EQUALS: '==';
 DIFFERENT: '!=';
 

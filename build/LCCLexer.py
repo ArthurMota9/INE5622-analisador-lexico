@@ -139,9 +139,9 @@ class LCCLexer(Lexer):
     MOD = 26
     NULL = 27
     LESS_THAN = 28
-    GREATHER_THAN = 29
+    GREATER_THAN = 29
     LESS_THAN_OR_EQUAL = 30
-    GREATHER_THAN_OR_EQUAL = 31
+    GREATER_THAN_OR_EQUAL = 31
     EQUALS = 32
     DIFFERENT = 33
     IDENT = 34
@@ -167,7 +167,7 @@ class LCCLexer(Lexer):
             "IF", "ELSE", "FOR", "NEW", "OPEN_PAREN", "CLOSE_PAREN", "OPEN_BRACE", 
             "CLOSE_BRACE", "OPEN_BRACK", "CLOSE_BRACK", "COMMA", "SEMI_COLON", 
             "ASSIGN", "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "MOD", "NULL", 
-            "LESS_THAN", "GREATHER_THAN", "LESS_THAN_OR_EQUAL", "GREATHER_THAN_OR_EQUAL", 
+            "LESS_THAN", "GREATER_THAN", "LESS_THAN_OR_EQUAL", "GREATER_THAN_OR_EQUAL", 
             "EQUALS", "DIFFERENT", "IDENT", "INT_CONSTANT", "FLOAT_CONSTANT", 
             "STRING_CONSTANT", "WS", "END_OF_FILE" ]
 
@@ -175,8 +175,8 @@ class LCCLexer(Lexer):
                   "RETURN", "IF", "ELSE", "FOR", "NEW", "OPEN_PAREN", "CLOSE_PAREN", 
                   "OPEN_BRACE", "CLOSE_BRACE", "OPEN_BRACK", "CLOSE_BRACK", 
                   "COMMA", "SEMI_COLON", "ASSIGN", "PLUS", "MINUS", "MULTIPLY", 
-                  "DIVIDE", "MOD", "NULL", "LESS_THAN", "GREATHER_THAN", 
-                  "LESS_THAN_OR_EQUAL", "GREATHER_THAN_OR_EQUAL", "EQUALS", 
+                  "DIVIDE", "MOD", "NULL", "LESS_THAN", "GREATER_THAN", 
+                  "LESS_THAN_OR_EQUAL", "GREATER_THAN_OR_EQUAL", "EQUALS", 
                   "DIFFERENT", "IDENT", "INT_CONSTANT", "FLOAT_CONSTANT", 
                   "STRING_CONSTANT", "WS", "END_OF_FILE" ]
 
