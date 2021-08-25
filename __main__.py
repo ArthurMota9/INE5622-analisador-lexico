@@ -1,5 +1,4 @@
 import argparse
-from os import path
 from antlr4 import FileStream, CommonTokenStream
 
 from LCCLexer import LCCLexer
