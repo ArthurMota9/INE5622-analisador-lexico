@@ -12,7 +12,7 @@ else:
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
-        buf.write("\u00dd\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u00de\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\3\2")
@@ -31,16 +31,16 @@ def serializedATN():
         buf.write("\23\u00ba\13\23\3\24\3\24\3\24\7\24\u00bf\n\24\f\24\16")
         buf.write("\24\u00c2\13\24\3\25\5\25\u00c5\n\25\3\25\3\25\3\26\3")
         buf.write("\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\5\26\u00d2\n\26")
-        buf.write("\3\27\3\27\3\27\3\27\3\27\5\27\u00d9\n\27\3\30\3\30\3")
-        buf.write("\30\2\2\31\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$")
-        buf.write("&(*,.\2\6\3\2\36#\3\2\30\31\3\2\32\34\3\2\4\6\2\u00e5")
+        buf.write("\3\27\3\27\3\27\3\27\3\27\3\27\5\27\u00da\n\27\3\30\3")
+        buf.write("\30\3\30\2\2\31\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36")
+        buf.write(" \"$&(*,.\2\6\3\2\36#\3\2\30\31\3\2\32\34\3\2\4\6\2\u00e6")
         buf.write("\2\62\3\2\2\2\4\66\3\2\2\2\6;\3\2\2\2\bL\3\2\2\2\nf\3")
         buf.write("\2\2\2\fq\3\2\2\2\16s\3\2\2\2\20z\3\2\2\2\22\u0083\3\2")
         buf.write("\2\2\24\u0085\3\2\2\2\26\u0088\3\2\2\2\30\u008b\3\2\2")
         buf.write("\2\32\u008d\3\2\2\2\34\u0096\3\2\2\2\36\u00a0\3\2\2\2")
         buf.write(" \u00a4\3\2\2\2\"\u00ae\3\2\2\2$\u00b3\3\2\2\2&\u00bb")
-        buf.write("\3\2\2\2(\u00c4\3\2\2\2*\u00d1\3\2\2\2,\u00d8\3\2\2\2")
-        buf.write(".\u00da\3\2\2\2\60\63\5\n\6\2\61\63\5\4\3\2\62\60\3\2")
+        buf.write("\3\2\2\2(\u00c4\3\2\2\2*\u00d1\3\2\2\2,\u00d9\3\2\2\2")
+        buf.write(".\u00db\3\2\2\2\60\63\5\n\6\2\61\63\5\4\3\2\62\60\3\2")
         buf.write("\2\2\62\61\3\2\2\2\62\63\3\2\2\2\63\64\3\2\2\2\64\65\7")
         buf.write("\2\2\3\65\3\3\2\2\2\669\5\6\4\2\67:\5\6\4\28:\5\4\3\2")
         buf.write("9\67\3\2\2\298\3\2\2\2:\5\3\2\2\2;<\7\3\2\2<=\7$\2\2=")
@@ -95,11 +95,11 @@ def serializedATN():
         buf.write("\3\2\2\2\u00d1\u00c8\3\2\2\2\u00d1\u00c9\3\2\2\2\u00d1")
         buf.write("\u00ca\3\2\2\2\u00d1\u00cb\3\2\2\2\u00d1\u00cc\3\2\2\2")
         buf.write("\u00d1\u00cd\3\2\2\2\u00d2+\3\2\2\2\u00d3\u00d4\7$\2\2")
-        buf.write("\u00d4\u00d5\7\23\2\2\u00d5\u00d6\7%\2\2\u00d6\u00d9\7")
-        buf.write("\24\2\2\u00d7\u00d9\7$\2\2\u00d8\u00d3\3\2\2\2\u00d8\u00d7")
-        buf.write("\3\2\2\2\u00d9-\3\2\2\2\u00da\u00db\t\5\2\2\u00db/\3\2")
-        buf.write("\2\2\22\629Lfqx\u0083\u0094\u00a2\u00ac\u00b1\u00b8\u00c0")
-        buf.write("\u00c4\u00d1\u00d8")
+        buf.write("\u00d4\u00d5\7\23\2\2\u00d5\u00d6\5$\23\2\u00d6\u00d7")
+        buf.write("\7\24\2\2\u00d7\u00da\3\2\2\2\u00d8\u00da\7$\2\2\u00d9")
+        buf.write("\u00d3\3\2\2\2\u00d9\u00d8\3\2\2\2\u00da-\3\2\2\2\u00db")
+        buf.write("\u00dc\t\5\2\2\u00dc/\3\2\2\2\22\629Lfqx\u0083\u0094\u00a2")
+        buf.write("\u00ac\u00b1\u00b8\u00c0\u00c4\u00d1\u00d9")
         return buf.getvalue()
 
 
@@ -1731,8 +1731,9 @@ class LCCParser ( Parser ):
         def OPEN_BRACK(self):
             return self.getToken(LCCParser.OPEN_BRACK, 0)
 
-        def INT_CONSTANT(self):
-            return self.getToken(LCCParser.INT_CONSTANT, 0)
+        def numexpression(self):
+            return self.getTypedRuleContext(LCCParser.NumexpressionContext,0)
+
 
         def CLOSE_BRACK(self):
             return self.getToken(LCCParser.CLOSE_BRACK, 0)
@@ -1756,7 +1757,7 @@ class LCCParser ( Parser ):
         localctx = LCCParser.LvalueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_lvalue)
         try:
-            self.state = 214
+            self.state = 215
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
@@ -1766,14 +1767,14 @@ class LCCParser ( Parser ):
                 self.state = 210
                 self.match(LCCParser.OPEN_BRACK)
                 self.state = 211
-                self.match(LCCParser.INT_CONSTANT)
+                self.numexpression()
                 self.state = 212
                 self.match(LCCParser.CLOSE_BRACK)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 213
+                self.state = 214
                 self.match(LCCParser.IDENT)
                 pass
 
@@ -1823,7 +1824,7 @@ class LCCParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 216
+            self.state = 217
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LCCParser.INT) | (1 << LCCParser.FLOAT) | (1 << LCCParser.STRING))) != 0)):
                 self._errHandler.recoverInline(self)

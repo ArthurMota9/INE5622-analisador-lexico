@@ -45,7 +45,7 @@ allocexpression: NEW types ('[' numexpression ']')+;
 
 expression: numexpression (('<' | '>' | '<=' | '>=' | '==' | '!=') numexpression)?;
 
-numexpression: term (('+' | '-') term)*; 
+numexpression: term (('+' | '-') term)*;
 
 term: unaryexpr (('*' | '/' | '%') unaryexpr)*;
 
@@ -53,7 +53,7 @@ unaryexpr: (('+' | '-'))? factor;
 
 factor: (INT_CONSTANT | FLOAT_CONSTANT | STRING_CONSTANT | NULL | lvalue | '(' numexpression ')');
 
-lvalue: IDENT '['INT_CONSTANT']' | IDENT;
+lvalue: IDENT '['numexpression']' | IDENT;
 
 types: INT | FLOAT | STRING;
 
@@ -78,7 +78,7 @@ OPEN_BRACK : '[';
 CLOSE_BRACK : ']';
 COMMA: ',';
 SEMI_COLON : ';';
-ASSIGN : '=';
+ASSIGN: '=';
 PLUS: '+';
 MINUS: '-';
 MULTIPLY: '*';
@@ -95,8 +95,11 @@ DIFFERENT: '!=';
 // Regex
 IDENT : [a-zA-Z][a-zA-Z0-9]*;
 INT_CONSTANT : [0-9]+;
-FLOAT_CONSTANT: [0-9]*.?[0-9]+;
-STRING_CONSTANT : [a-zA-Z][a-zA-Z0-9]*;
+FLOAT_CONSTANT: DIGIT?'.'DIGIT*;
+STRING_CONSTANT : '"'(ESC|.)*? '"';
+fragment ESC: '\\"' | '\\\\';
 WS : [ \r\n\t]+ -> skip;
+
+fragment DIGIT: [0-9];
 
 END_OF_FILE: '<EOF>';
